@@ -26,6 +26,7 @@ This script can be run from anywhere.
 It is enough to make one of the files executable and run it directly in the console.
 
 $ chmod ugo+x language-master/language-setup.sh
+
 $ sudo sh language-master/language-setup.sh
 
 Then just follow the instructions of the installation wizard.
