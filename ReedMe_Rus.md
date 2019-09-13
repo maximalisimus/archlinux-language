@@ -1,4 +1,4 @@
-﻿##########################
+##########################
 #                        #
 #   ArchLinux Language   #
 #   script setup         #
@@ -29,6 +29,7 @@ E-Mail: maximalis171091@yandex.ru
 Достаточно сделать один из файлов - испольняемым и запустить его непосредственно в консоли.
 
 $ chmod ugo+x language-master/language-setup.sh
+
 $ sudo sh language-master/language-setup.sh
 
 Далее просто следуйсте указаниям мастер-установки.
