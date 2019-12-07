@@ -9,6 +9,7 @@ filesdir=$(dirname "$ABSOLUT_FILENAME")
 VERSION="MAXIMALISIMUS Installation Framework 2.3"
 # list of variables
 source "$filesdir"/installer-variables.sh
+source "$filesdir"/modules/dependences_function.sh
 FONT=""
 CURR_LOCALE=""
 _sethwclock=""
@@ -154,6 +155,12 @@ set_hw_clock() {
              ;;
      esac 
 }
+setcolor
+dialog 1>/dev/null 2>/dev/null
+if [[ $? != "0" ]]; then
+	script_dependences_question
+	dependences_result
+fi
 select_language
 set_timezone
 set_hw_clock
