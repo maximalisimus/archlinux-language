@@ -8,8 +8,8 @@ filesdir=$(dirname "$ABSOLUT_FILENAME")
 # Save retyping
 VERSION="MAXIMALISIMUS Installation Framework 2.3"
 # list of variables
-source "$filesdir"/installer-variables.sh
-source "$filesdir"/modules/dependences_function.sh
+source "$filesdir/installer-variables.sh"
+source "$filesdir/dependences_function.sh"
 FONT=""
 CURR_LOCALE=""
 _sethwclock=""
