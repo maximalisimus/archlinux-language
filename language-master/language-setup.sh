@@ -6,8 +6,9 @@ ANSWER="/tmp/.aif"
 ABSOLUT_FILENAME=$(readlink -e "$0")
 filesdir=$(dirname "$ABSOLUT_FILENAME")
 # Save retyping
-VERSION="MAXIMALISIMUS Installation Framework 2.3"
+VERSION="MAXIMALISIMUS Installation Framework 2.4"
 # list of variables
+source "$filesdir/dialogrc-conf.sh"
 source "$filesdir/installer-variables.sh"
 source "$filesdir/dependences_function.sh"
 FONT=""
@@ -161,9 +162,11 @@ if [[ $? != "0" ]]; then
 	script_dependences_question
 	dependences_result
 fi
+us_dlgrc_conf
 select_language
 set_timezone
 set_hw_clock
 set_locale
 rm -rf ${ANSWER}
+un_us_dlgrc_conf
 exit 0
