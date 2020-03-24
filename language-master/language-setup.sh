@@ -5,6 +5,7 @@
 ANSWER="/tmp/.aif"
 ABSOLUT_FILENAME=$(readlink -e "$0")
 filesdir=$(dirname "$ABSOLUT_FILENAME")
+_how_shell=$(echo "$SHELL" | rev | cut -d '/' -f1 | rev | tr '[:upper:]' '[:lower:]')
 # Save retyping
 VERSION="MAXIMALISIMUS Installation Framework 2.4"
 # list of variables
@@ -76,7 +77,7 @@ select_language() {
 }
 # locale array generation code adapted from the Manjaro 0.8 installer
 set_locale() {
-	  
+      
   sed -i '/^[a-z]/s/^/#/g' /etc/locale.gen
   
   LOCALES=""    
@@ -149,18 +150,26 @@ set_hw_clock() {
 
     case $(cat ${ANSWER}) in
         "1") hwclock --systohc --utc
-				_sethwclock="utc"
+                _sethwclock="utc"
              ;;
         "2") hwclock --systohc --localtime
-				_sethwclock="localtime"
+                _sethwclock="localtime"
              ;;
      esac 
 }
 setcolor
-dialog 1>/dev/null 2>/dev/null
-if [[ $? != "0" ]]; then
-	script_dependences_question
-	dependences_result
+if [[ "${_how_shell[*]}" != "fish" ]]; then
+    dialog 1>/dev/null 2>/dev/null
+    if [[ $? != "0" ]]; then
+        script_dependences_question
+        dependences_result
+    fi
+else
+    dialog 1>/dev/null 2>/dev/null
+    if [[ "$STATUS" != "0" ]]; then
+        script_dependences_question
+        dependences_result
+    fi
 fi
 us_dlgrc_conf
 select_language

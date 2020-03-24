@@ -31,23 +31,27 @@ dependences_result()
     read item
     case "$item" in
         y|Y) echo -e -n "\e[1;32mПроизводится установка пакета «dialog»...\e[0m"
-            outin_success
-            echo -e -n "\e[1;32mThe «dialog» package is installed...\e[0m"
-            outin_success
-            echo ""
-            ;;
+             outin_success
+             echo -e -n "\e[1;32mThe «dialog» package is installed...\e[0m"
+             outin_success
+             echo ""
+             sudo pacman -Syy --noconfirm
+             sudo pacman -S dialog --noconfirm
+             ;;
         n|N) echo -e -n "\e[1;31mРабота скрипта будет прекращена!\e[0m"
-            outin_failure
-            echo -e -n "\e[1;31mThe script will be terminated!\e[0m"
-            outin_failure
-            echo ""
-            exit 0
-            ;;
-        *) echo -e -n "\e[1;37mВыполняется действие по умолчанию...\e[0m"
-          outin_success
-          echo -e -n "\e[1;32mThe default action is executed...\e[0m" 
-          outin_success
-          echo ""
-            ;;
+             outin_failure
+             echo -e -n "\e[1;31mThe script will be terminated!\e[0m"
+             outin_failure
+             echo ""
+             exit 0
+             ;;
+        *)   echo -e -n "\e[1;37mВыполняется действие по умолчанию...\e[0m"
+             outin_success
+             echo -e -n "\e[1;32mThe default action is executed...\e[0m" 
+             outin_success
+             echo ""
+             sudo pacman -Syy --noconfirm
+             sudo pacman -S dialog --noconfirm
+             ;;
     esac
 }
