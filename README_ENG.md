@@ -1,9 +1,5 @@
-﻿##########################
-#                        #
-#   ArchLinux Language   #
-#   script setup         #
-#                        #
-##########################
+#   ArchLinux Language
+#   script setup
 
 Creation date: 13.09.2019
 
