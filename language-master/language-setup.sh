@@ -7,7 +7,7 @@ ABSOLUT_FILENAME=$(readlink -e "$0")
 filesdir=$(dirname "$ABSOLUT_FILENAME")
 _how_shell=$(echo "$SHELL" | rev | cut -d '/' -f1 | rev | tr '[:upper:]' '[:lower:]')
 # Save retyping
-VERSION="MAXIMALISIMUS Installation Framework 2.4"
+VERSION="MAXIMALISIMUS Installation Framework 2.5"
 # list of variables
 source "$filesdir/dialogrc-conf.sh"
 source "$filesdir/installer-variables.sh"
