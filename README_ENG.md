@@ -3,10 +3,6 @@
 
 Creation date: 13.09.2019
 
-Editor used: Notepad++
-    end of line: unix
-    encoding: UTF-8
-    
 This script is designed for quick localization of ArchLinux system 
 in pseudographic mode, using the dialog package. 
 I. e. quick installation / change of system language.
