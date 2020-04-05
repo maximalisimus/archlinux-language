@@ -1,9 +1,5 @@
-##########################
-#                        #
-#   ArchLinux Language   #
-#   script setup         #
-#                        #
-##########################
+#   ArchLinux Language
+#   script setup
 
 Имя автора: maximalisimus
 E-Mail: maximalis171091@yandex.ru
